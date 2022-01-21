@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
+import React from 'react';
 import Demo from './pages/Demo.tsx';
 
-function App() {
+const App=()=> {
   return (
     <div className="App">
       <Demo />
