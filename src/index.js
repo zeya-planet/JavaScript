@@ -2,11 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+  } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import Demo from './pages/comps/demo/demo.tsx';
+import Three from './pages/comps/threes/index.tsx';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Demo />} />
+        <Route path="/3d" element={<Three />} />
+      </Routes> 
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

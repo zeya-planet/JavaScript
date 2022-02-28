@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <title>时间戳倒计时</title>
+    </head>
+    <body>
+        <div id="t"></div>
+
+        <script>
+            // 设置终止时间
+            var targetTime = "2022-12-31 23:30:52";
+
+            const countDown = (time) =>{
+                const now =new Date().getTime();
+                const end = new Date(time).getTime();
+                const times=(end-now)/1000;
+
+                var d,h,m,s;
+                d=Math.floor(times / 60 /60 /24);
+                h=Math.floor(times / 60 /60 %24);
+                m=Math.floor(times /60 %60 );
+                s=Math.floor(times %60)
+
+                return d+'天'+h+'小时'+m+'分钟'+s+'秒'
+
+            }
+            window.setInterval(() => {
+                time1=countDown(targetTime);
+                document.getElementById('t').innerHTML=time1;
+            }, 1000);
+        </script>
+    </body>
+</html>

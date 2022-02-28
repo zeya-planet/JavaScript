@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>canvas</title>
+        <style type="text/css">
+            body {
+                width: 100%;
+                height: 100%;
+            }
+            #canvas {
+                background: aquamarine;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="300"></canvas>
+
+        <script type="text/javascript">
+            //获取元素
+            var Canvas = document.getElementById('canvas');
+            //获取上下文
+            var context = Canvas.getContext('2d');
+            console.info(context)
+            //绘制图片
+            context.moveTo(10, 75);
+            context.lineTo(90, 75);
+            context.moveTo(90, 75);
+            context.lineTo(105, 50);
+            context.moveTo(105, 50);
+            context.lineTo(120,95);
+            context.moveTo(120,95);
+            context.lineTo(150,50);
+            context.moveTo(150,50);
+            context.lineTo(180,80);
+            context.strokeStyle='red';
+            context.stroke();
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext('2d');
+            var sW = 1;
+            var lW = 4;
+            var spacing = 10;
+            for (var x = 0; x < canvas.width; x+=spacing) {
+            context.moveTo(x, 0);
+            if(x % (spacing * 5) === 0){
+                context.lineTo(x, lW);
+            } else {
+                context.lineTo(x, sW);
+            }
+            }
+            for (let y = 0; y < canvas.height; y+=spacing) {
+            context.moveTo(0, y);
+            if(y % (spacing * 5) === 0){
+                context.lineTo(lW, y);
+            } else {
+                context.lineTo(sW, y);
+            }
+            }
+            //矩形 x轴坐标 y轴坐标 长 宽
+            context.rect(75, 15, 160, 120);
+            //边色
+            context.strokeStyle='red'
+            //绘制边
+            context.stroke();
+            // 填充色
+            context.fillStyle='rgba(0,0,255,0.5)';
+            //填充
+            context.fill();
+            context.moveTo(90, 15);
+context.lineTo(210, 15);
+context.lineTo(210, 135);
+context.lineTo(90, 135);
+context.lineTo(90, 15);
+context.stroke();
+
+            context.stroke();
+
+        // const canvas3=document.getElementById('canvas-3');
+        // const context3=getContext('2d');
+        // context.moveTo(10,20);
+        // context.lineTo(40,20);
+
+        // context.strokeStyle='pink';
+
+        // context.stroke();
+
+        </script>
+    </body>
+</html>
